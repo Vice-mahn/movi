@@ -1,0 +1,229 @@
+.dropdown-item:hover {
+  color: white !important;
+  background-color: #e50914 !important;
+}
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  background: #232323 !important;
+  overflow-x: hidden !important;
+}
+
+nav {
+  color: transparent;
+}
+@media screen and (max-width: 1024px) {
+  nav {
+    margin-bottom: 4rem;
+  }
+}
+nav #logo {
+  color: #e50914;
+  margin-left: 10px;
+}
+nav #signout {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+nav #signout:hover {
+  text-decoration: underline;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background: #232323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 60px;
+}
+.container > p {
+  width: 600px;
+  color: white;
+  display: flex;
+  font-size: 3rem;
+}
+.container > p span {
+  color: #e50914;
+  margin: 0 8px 0;
+}
+@media screen and (max-width: 767px) {
+  .container > p {
+    width: 90%;
+    font-size: 2rem;
+  }
+}
+.container #images {
+  width: 600px;
+  display: flex;
+  margin-bottom: 5px;
+  width: 600px;
+}
+@media screen and (max-width: 767px) {
+  .container #images {
+    width: 90%;
+  }
+}
+.container form {
+  background: #353535;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 600px;
+  text-transform: uppercase;
+  margin-bottom: 1rem !important;
+}
+@media screen and (max-width: 767px) {
+  .container form {
+    width: 90%;
+  }
+  .container form .cvv-input {
+    margin-top: 24px;
+  }
+}
+.container form .cvv-input {
+  height: 40px;
+}
+.container form .inputBox {
+  margin-top: 20px;
+}
+.container form .inputBox span {
+  display: block;
+  color: #999;
+  padding-bottom: 5px;
+}
+.container form .inputBox input,
+.container form .inputBox select {
+  width: 100%;
+  padding: 10px;
+  background-color: #4f4f4f;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: #ddd;
+}
+.container form .flexbox {
+  display: flex;
+  gap: 15px;
+}
+.container form .flexbox .inputBox {
+  flex: 1 1 150px;
+}
+.container form .submit-btn {
+  width: 100%;
+  background: #e50914;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s linear;
+  text-transform: uppercase;
+}
+.container form .submit-btn a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+.container form .submit-btn:hover {
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+.container #subscription {
+  padding: 15px;
+  color: white;
+  width: 600px;
+  background-color: #353535;
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: space-between;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 767px) {
+  .container #subscription {
+    width: 90%;
+  }
+}
+.container #subscription a {
+  align-self: center;
+  color: #0071eb;
+  text-decoration: none;
+}
+.container #subscription a:hover {
+  text-decoration: underline;
+}
+
+.security-lock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+@media screen and (max-width: 767px) {
+  .security-lock {
+    width: 95%;
+  }
+}
+.security-lock h3 {
+  font-size: 1rem;
+}
+.security-lock img,
+.security-lock a {
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #0071eb;
+}
+.security-lock img:hover,
+.security-lock a:hover {
+  text-decoration: underline;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #232323;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #dddddd;
+  border-top-color: #e50914;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}/*# sourceMappingURL=payment-page.css.map */

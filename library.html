@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOVI</title>
+  <!-- custom style sheet -->
+  <link rel="stylesheet" href="CSS/librarydemo.css" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/1e3bc3a32b.js" crossorigin="anonymous"></script>
+  <!-- CSS swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!-- icon -->
+  <link rel="icon" type="image/x-icon" href="/IMG/images.png">
+
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fs-1 text-uppercase" href="/index.html" id="logo">movi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation" id="toggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header" id="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+            style="color: white !important"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="nav-list">
+            <li class="nav-item d-flex">
+              <form class="d-flex input-group" role="search">
+                <input class="form-control" type="search" placeholder="Search a movie or series" aria-label="Search" />
+                <button class="btn btn-danger" id="button-addon2" type="submit">
+                  Search
+                </button>
+              </form>
+            </li>
+            <li class="nav-item d-flex">
+              <div class="btn-group">
+                <button type="button" class="btn btn-secondary">
+                  Subscription
+                </button>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/pricing.html">Change Plan</a></li>
+                  <li>
+                    <a class="dropdown-item" href="/login-page.html">Pause Subscription</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/library.html">Cancel Subscription</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+      aria-labelledby="staticBackdropLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Modal title
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NavBar -->
+    <div id="navbar">
+      <a href="#" id="nav-link" class="link-active">
+        <i class="fa-solid fa-house"></i>
+        <span class="nav-link-title">Library</span>
+      </a>
+      <a href="/watchlist.html" id="nav-link">
+        <i class="fa-solid fa-list"></i>
+        <span class="nav-link-title">Watchlist</span>
+      </a>
+      <a href="/tv-page.html" id="nav-link">
+        <i class="fa-solid fa-tv"></i>
+        <span class="nav-link-title">Devices</span>
+      </a>
+      <a href="/favorites.html" id="nav-link">
+        <i class="fa-regular fa-bookmark"></i>
+        <span class="nav-link-title">Favorites</span>
+      </a>
+      <a href="/login-page.html" id="nav-link">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span class="nav-link-title">Logout</span>
+      </a>
+    </div>
+    <!-- Navbar end -->
+  </header>
+
+  <section class="filter-form container" style="margin-top: 6rem !important">
+    <div id="left">
+      <div class="filter-wrap">
+        <div class="filter">
+          <input type="text" name="" placeholder="Select Genre(s)" id="" class="input-selector" />
+          <span class="down-arrow">&blacktriangledown;</span>
+        </div>
+        <div class="filter-list">
+          <label for="action" class="genre">
+            <input type="checkbox" name="" id="action" />
+            Action
+          </label>
+          <label for="animation" class="genre">
+            <input type="checkbox" name="" id="animation" />
+            Animation
+          </label>
+          <label for="adventure" class="genre">
+            <input type="checkbox" name="" id="adventure" />
+            Adventure
+          </label>
+          <label for="comedy" class="genre">
+            <input type="checkbox" name="" id="comedy" />
+            Comedy
+          </label>
+          <label for="crime" class="genre">
+            <input type="checkbox" name="" id="crime" />
+            Crime
+          </label>
+          <label for="drama" class="genre">
+            <input type="checkbox" name="" id="drama" />
+            Drama
+          </label>
+          <label for="fantasy" class="genre">
+            <input type="checkbox" name="" id="fantasy" />
+            Fantasy
+          </label>
+          <label for="horror" class="genre">
+            <input type="checkbox" name="" id="horror" />
+            Horror
+          </label>
+          <label for="mystery" class="genre">
+            <input type="checkbox" name="" id="mystery" />
+            Mystery
+          </label>
+          <label for="romance" class="genre">
+            <input type="checkbox" name="" id="romance" />
+            Romance
+          </label>
+          <label for="sci-fi" class="genre">
+            <input type="checkbox" name="" id="sci-fi" />
+            Sci-Fi
+          </label>
+        </div>
+      </div>
+      <div class="filter-wrap">
+        <div class="filter2">
+          <input type="text" name="" placeholder="Choose Year" id="" class="input-selector" />
+          <span class="down-arrow2">&blacktriangledown;</span>
+        </div>
+        <div class="filter-list2">
+          <label for="2023" class="genre">
+            <input type="checkbox" name="" id="2023" />
+            2023
+          </label>
+          <label for="2022" class="genre">
+            <input type="checkbox" name="" id="2022" />
+            2022
+          </label>
+          <label for="2021" class="genre">
+            <input type="checkbox" name="" id="2021" />
+            2021
+          </label>
+          <label for="2020" class="genre">
+            <input type="checkbox" name="" id="2020" />
+            2020
+          </label>
+          <label for="2019" class="genre">
+            <input type="checkbox" name="" id="2019" />
+            2019
+          </label>
+          <label for="2018" class="genre">
+            <input type="checkbox" name="" id="2018" />
+            2018
+          </label>
+          <label for="2017" class="genre">
+            <input type="checkbox" name="" id="2017" />
+            2017
+          </label>
+          <label for="2016" class="genre">
+            <input type="checkbox" name="" id="2016" />
+            2016
+          </label>
+          <label for="2015" class="genre">
+            <input type="checkbox" name="" id="2015" />
+            2015
+          </label>
+          <label for="2014" class="genre">
+            <input type="checkbox" name="" id="2014" />
+            2014
+          </label>
+          <label for="older" class="genre">
+            <input type="checkbox" name="" id="older" />
+            older
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div id="right">
+      <a href="/library.html" style="color: #b7b7b7">Apply</a>
+      <a href="/library.html" style="color: #b7b7b7">Clear</a>
+    </div>
+  </section>
+
+  <section class="home container" id="home">
+    <img src="/img/home-background.png " alt="" class="home-img" />
+
+    <div class="home-text">
+      <h1 class="home-title">
+        Hitman's Wife's <br />
+        Bodyguard
+      </h1>
+      <p>Releasing 24 December</p>
+      <a href="#" class="watch-btn">
+        <i class="fa-regular fa-circle-play"></i>
+        <span>Watch the trailer</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="popular container" id="popular">
+    <div id="heading">
+      <h2 class="heading-title">
+        Popular And <span class="red">Trending</span>
+      </h2>
+      <!-- Swiper buttons -->
+      <div class="swiper-btn">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <div class="popular-content swiper">
+      <div class="swiper-wrapper">
+        <!-- Movie box 1 -->
+        <div class="swiper-slide">
+          <div class="movie-box">
+            <img src="img/popular-movie-1.jpg" alt="" class="movie-box-img" />
+            <div class="box-text">
+              <h2 class="movie-title">Spider-Man: No Way Home</h2>
+              <span class="movie-type">Action</span>
+              <a href="/movie-page.html" class="watch-btn">
+                <i class="fa-regular fa-circle-play"></i>
+                <span>Watch</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Movie box 2 -->
+        <div class="swiper-slide">
+          <div class="movie-box">
+            <img src="img/popular-movie-2.jpg" alt="" class="movie-box-img" />
+            <div class="box-text">
+              <h2 class="movie-title">Jungle Cruise</h2>
+              <span class="movie-type">Action/Adventure</span>
+              <a href="/movie-page.html" class="watch-btn">
+                <i class="fa-regular fa-circle-play"></i>
+                <span>Watch </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Movie box 3 -->
+        <div class="swiper-slide">
+          <div class="movie-box">
+            <img src="img/popular-movie-3.jpg" alt="" class="movie-box-img" />
+            <div class="box-text">
+              <h2 class="movie-title">Loki</h2>
+              <span class="movie-type">Action</span>
+              <a href="/movie-page.html" class="watch-btn">
+                <i class="fa-regular fa-circle-play"></i>
+                <span>Watch</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Movie box 4 -->
+        <div class="swiper-slide">
+          <div class="movie-box">
+            <img src="img/popular-movie-4.jpg" alt="" class="movie-box-img" />
+            <div class="box-text">
+              <h2 class="movie-title">Squid Game</h2>
+              <span class="movie-type">Action/Drama</span>
+              <a href="/movie-page.html" class="watch-btn">
+                <i class="fa-regular fa-circle-play"></i>
+                <span>Watch</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Movie box 5 -->
+        <div class="swiper-slide">
+          <div class="movie-box">
+            <img src="img/popular-movie-5.jpg" alt="" class="movie-box-img" />
+            <div class="box-text">
+              <h2 class="movie-title">Falcon Man</h2>
+              <span class="movie-type">Action</span>
+              <a href="/movie-page.html" class="watch-btn">
+                <i class="fa-regular fa-circle-play"></i>
+                <span>Watch</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Movie box 6 -->
+        <div class="swiper-slide">
+          <div class="movie-box">
+            <img src="img/popular-movie-6.jpg" alt="" class="movie-box-img" />
+            <div class="box-text">
+              <h2 class="movie-title">Hawkeye</h2>
+              <span class="movie-type">Action</span>
+              <a href="/movie-page.html" class="watch-btn">
+                <i class="fa-regular fa-circle-play"></i>
+                <span>Watch</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="movies container" id="movies">
+    <div id="heading">
+      <h2 class="heading-title">Movies And <span class="red">Shows</span></h2>
+    </div>
+    <!-- Movie Content -->
+    <div class="movies-content">
+      <!-- Movie Box 1-->
+      <div class="movie-box">
+        <img src="img/movie-1.jpg" alt="" class="movie-box-img" />
+        <div class="box-text">
+          <h2 class="movie-title">Jumanji: Welcome To The Jungle</h2>
+          <span class="movie-type">Action/Adventure</span>
+          <a href="/movie-page.html" class="watch-btn">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Watch</span>
+          </a>
+        </div>
+      </div>
+      <!-- Movie Box 2 -->
+      <div class="movie-box">
+        <img src="img/movie-2.jpg" alt="" class="movie-box-img" />
+        <div class="box-text">
+          <h2 class="movie-title">Hitman's Wife Body-Guard</h2>
+          <span class="movie-type">Action</span>
+          <a href="/movie-page.html" class="watch-btn">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Watch</span>
+          </a>
+        </div>
+      </div>
+      <!-- Movie Box 3 -->
+      <div class="movie-box">
+        <img src="img/movie-3.jpg" alt="" class="movie-box-img" />
+        <div class="box-text">
+          <h2 class="movie-title">Shang-Chi</h2>
+          <span class="movie-type">Action/Sci-Fi</span>
+          <a href="/movie-page.html" class="watch-btn">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Watch</span>
+          </a>
+        </div>
+      </div>
+      <!-- Movie Box 4 -->
+      <div class="movie-box">
+        <img src="img/movie-4.jpg" alt="" class="movie-box-img" />
+        <div class="box-text">
+          <h2 class="movie-title">Eternals</h2>
+          <span class="movie-type">Action</span>
+          <a href="/movie-page.html" class="watch-btn">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Watch</span>
+          </a>
+        </div>
+      </div>
+      <!-- Movie Box 5 -->
+      <div class="movie-box">
+        <img src="img/movie-5.jpg" alt="" class="movie-box-img" />
+        <div class="box-text">
+          <h2 class="movie-title">Spectre</h2>
+          <span class="movie-type">Action</span>
+          <a href="/movie-page.html" class="watch-btn">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Watch</span>
+          </a>
+        </div>
+      </div>
+      <!-- Movie Box 6-->
+      <div class="movie-box">
+        <img src="img/movie-6.jpg" alt="" class="movie-box-img" />
+        <div class="box-text">
+          <h2 class="movie-title">Money Heist</h2>
+          <span class="movie-type">Action/Sci-Fi</span>
+          <a href="/movie-page.html" class="watch-btn">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Watch</span>
+          </a>
+        </div>
+      </div>
+      <!-- Movie Box 7 -->
+      <div class="movie-box">
+        <img src="img/movie-7.jpg" alt="" class="movie-box-img" />
+        <div class="box-text">
+          <h2 class="movie-title">The Wolverine</h2>
+          <span class="movie-type">Action/Drama</span>
+          <a href="/movie-page.html" class="watch-btn">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Watch</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Movie Box 8-->
+      <div class="movie-box">
+        <img src="img/movie-8.jpg" alt="" class="movie-box-img" />
+        <div class="box-text">
+          <h2 class="movie-title">Johnny English</h2>
+          <span class="movie-type">Comedy</span>
+          <a href="/movie-page.html" class="watch-btn">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Watch</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="load-more">
+    <a href="#" class="load-btn">Load More...</a>
+  </div>
+
+  <div class="copyright">
+    <p>&#169; Vice-Mahn All Rights Reserved</p>
+  </div>
+
+  <div class="loader"></div>
+
+  <!-- JS bootstrap -->
+  <script src="/js/bootstrap.bundle.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.querySelector(".loader");
+
+      loader.classList.add("loader--hidden");
+
+      loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+      });
+    });
+  </script>
+  <script>
+    const myModal = document.getElementById("myModal");
+    const myInput = document.getElementById("myInput");
+
+    myModal.addEventListener("shown.bs.modal", () => {
+      myInput.focus();
+    });
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".popular-content", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      autoplay: {
+        delay: 5500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        280: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        510: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        758: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        900: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+    });
+  </script>
+
+  <!-- Filter -->
+  <script>
+    document.querySelector(".filter").addEventListener("click", () => {
+      document.querySelector(".filter-list").classList.toggle("show");
+      document.querySelector(".down-arrow").classList.toggle("rotate180");
+    });
+
+    document.querySelector(".filter2").addEventListener("click", () => {
+      document.querySelector(".filter-list2").classList.toggle("show");
+      document.querySelector(".down-arrow2").classList.toggle("rotate180");
+    });
+  </script>
+</body>
+
+</html>

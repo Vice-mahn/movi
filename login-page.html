@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOVI</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/login-page.css" />
+  <!-- icon -->
+  <link rel="icon" type="image/x-icon" href="/IMG/images.png">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg container">
+    <a class="navbar-brand fw-bold fs-1 text-uppercase" href="/index.html" id="logo">movi</a>
+  </nav>
+  <div id="gen-container">
+    <div id="form-wrapper">
+      <h2>Login</h2>
+      <form action="#">
+        <div id="form-control">
+          <input type="text" required />
+          <label class="text-truncate">Email or phone number</label>
+        </div>
+        <div id="form-control">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <button type="submit"><a href="/library.html">Sign In</a></button>
+        <div class="form-help">
+          <div class="remember-me">
+            <input type="checkbox" id="remember-me" />
+            <label for="remember-me">Remember me</label>
+          </div>
+          <a href="#">Need help?</a>
+        </div>
+      </form>
+      <p>New to MOVI? <a href="/signup.html">Sign up now</a></p>
+      <small>
+        This page is protected by Google reCAPTCHA to ensure you're not a bot.
+        <a href="#">Learn more.</a>
+      </small>
+    </div>
+  </div>
+
+  <div class="loader"></div>
+
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.querySelector(".loader");
+
+      loader.classList.add("loader--hidden");
+
+      loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+      });
+    });
+  </script>
+</body>
+
+</html>

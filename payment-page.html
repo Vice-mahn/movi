@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVI</title>
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/payment-page.css" />
+    <!-- icon -->
+    <link rel="icon" type="image/x-icon" href="/IMG/images.png">
+
+
+</head>
+
+<body>
+    <nav class="navbar  justify-content-between ">
+        <a class="navbar-brand fw-bold fs-1 text-uppercase" href="/index.html" id="logo">movi</a>
+        <a href="/login-page.html" id="signout">Sign Out</a>
+    </nav>
+
+    <div class="container">
+
+        <p>Set Up<span> Debit/Credit </span> Card</p>
+
+        <div id="images">
+            <img src="/IMG/VERVE.png" alt="">
+            <img src="/IMG/VISA.png" alt="">
+            <img src="/IMG/MASTERCARD.png" alt="">
+        </div>
+
+
+
+        <form action="">
+            <div class="inputBox">
+                <span>card number</span>
+                <input type="text" maxlength="16" class="card-number-input">
+            </div>
+            <div class="inputBox">
+                <span>card holder</span>
+                <input type="text" class="card-holder-input">
+            </div>
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>expiration mm</span>
+                    <select name="" id="" class="month-input">
+                        <option value="month" selected disabled>month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>expiration yy</span>
+                    <select name="" id="" class="year-input">
+                        <option value="year" selected disabled>year</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>cvv </span>
+                    <input type="text" maxlength="4" class="cvv-input">
+                </div>
+            </div>
+            <button class="submit-btn"> <a href="/library.html">START MEMBERSHIP</a></button>
+        </form>
+
+        <section id="subscription">
+            <div id="plan">
+                $19.99 / month <br>
+                Starter
+            </div>
+
+            <a href="/pricing.html">Change</a>
+        </section>
+
+    </div>
+
+
+    <div class="security-lock">
+        <img src="/IMG/security-lock.png" alt="">
+        <h3>Your Information and transactions are end-to-end encrypted <a href="#"> Learn More</a> </h3>
+    </div>
+
+    <div class="loader">
+    </div>
+
+
+
+
+
+
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+
+            loader.classList.add("loader--hidden");
+
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild(loader);
+            });
+        });
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

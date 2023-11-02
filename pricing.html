@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOVI</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/pricing.css" />
+    <!-- icon -->
+    <link rel="icon" type="image/x-icon" href="/IMG/images.png">
+
+</head>
+
+<body>
+    <nav class="navbar  justify-content-between ">
+        <a class="navbar-brand fw-bold fs-1 text-uppercase" href="/index.html" id="logo">movi</a>
+        <a href="/login-page.html" id="signout">Sign Out</a>
+    </nav>
+    <div id="pricing-container">
+        <div class="text-area">
+            <h3>One more step to finish setting up Your account!</h3>
+            <h2>Choose the plan that suits you</h2>
+            <p>We present 3 packages you can choose to start watching various movies you like at low prices and
+                according to your needs. You can also cancel at anytime</p>
+        </div>
+        <div class="price-row">
+            <div class="price-col">
+                <div id="text">
+                    <p>Starter</p>
+                    <h3>$19.99 <span> / month</span></h3>
+                    <ul>
+                        <li>Access to Limited Library</li>
+                        <li>Standard Definition (SD)</li>
+                        <li>Single-device Streaming </li>
+                        <li>Ad-Supported</li>
+                        <li>7-day Free Trial</li>
+                    </ul>
+                </div>
+                <button><a href="/payment-page.html">Choose Plan</a> </button>
+            </div>
+            <div class="price-col">
+                <div id="text">
+                    <p>Pro</p>
+                    <h3>$29.99 <span> / month</span></h3>
+                    <ul>
+                        <li>Expanded Library</li>
+                        <li>High Definition (HD) Quality</li>
+                        <li>Two-Device Streaming </li>
+                        <li>Ad-Free</li>
+                        <li>7-day Free Trial</li>
+                    </ul>
+                </div>
+                <button><a href="/payment-page.html">Choose Plan</a> </button>
+            </div>
+            <div class="price-col">
+                <div id="text">
+                    <p>Platinum</p>
+                    <h3>$39.99 <span> / month</span></h3>
+                    <ul>
+                        <li>Full Library Access</li>
+                        <li>Ultra High Definition (UHD) </li>
+                        <li>Multiple-Device Streaming </li>
+                        <li>Ad-Free</li>
+                        <li>Offline-Viewing</li>
+                        <li>7-day Free Trial</li>
+                    </ul>
+                </div>
+                <button><a href="/payment-page.html">Choose Plan</a> </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="loader">
+    </div>
+
+
+
+
+
+
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+
+            loader.classList.add("loader--hidden");
+
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild(loader);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

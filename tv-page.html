@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOVI</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/1e3bc3a32b.js" crossorigin="anonymous"></script>
+  <!-- icon -->
+  <link rel="icon" type="image/x-icon" href="/IMG/images.png">
+
+  <link rel="stylesheet" href="CSS/tv-page.css" />
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fs-1 text-uppercase" href="/index.html" id="logo">movi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation" id="toggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header" id="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+            style="color: white !important"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="nav-list">
+            <li class="nav-item d-flex">
+              <form class="d-flex input-group" role="search">
+                <input class="form-control" type="search" placeholder="Search a movie or series" aria-label="Search" />
+                <button class="btn btn-danger" id="button-addon2" type="submit">
+                  Search
+                </button>
+              </form>
+            </li>
+            <li class="nav-item d-flex">
+              <div class="btn-group">
+                <button type="button" class="btn btn-secondary">
+                  Subscription
+                </button>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/pricing.html">Change Plan</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/login-page.html">Pause Subscription</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/library.html">Cancel Subscription</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- NavBar -->
+    <div id="navbar">
+      <a href="/library.html" id="nav-link">
+        <i class="fa-solid fa-house"></i>
+        <span class="nav-link-title">Library</span>
+      </a>
+      <a href="/watchlist.html" id="nav-link">
+        <i class="fa-solid fa-list"></i>
+        <span class="nav-link-title">Watchlist</span>
+      </a>
+      <a href="#" id="nav-link" class="link-active">
+        <i class="fa-solid fa-tv"></i>
+        <span class="nav-link-title">Devices</span>
+      </a>
+      <a href="/favorites.html" id="nav-link">
+        <i class="fa-regular fa-bookmark"></i>
+        <span class="nav-link-title">Favorites</span>
+      </a>
+      <a href="/login-page.html" id="nav-link">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span class="nav-link-title">Logout</span>
+      </a>
+    </div>
+    <!-- Navbar end -->
+  </header>
+
+  <section class="body container">
+    <figure>
+      <img src="/IMG/qr-2.avif" alt="" />
+      <figcaption>QR code</figcaption>
+    </figure>
+    <div class="instructions">
+      <ul>
+        <li>
+          Launch our mobile app on both devices that you want to connect.
+          Ensure that the app is updated to the latest version for optimal
+          performance.
+        </li>
+        <li>
+          Go to the "Device Connection" section within the app. This might be
+          located in the settings, profile, or a dedicated connectivity tab,
+          depending on the app's desig
+        </li>
+        <li>
+          Tap on the "Initiate Scan" or similar button to activate the
+          scanning feature. Allow the app to access the device's camera to
+          capture relevant information.
+        </li>
+        <li>
+          Point the camera of one device towards the QR code displayed on the
+          other device. Ensure that the QR code is well-lit and aligned within
+          the camera viewfinder.
+        </li>
+        <li>
+          Once the QR code is successfully scanned, you will receive a
+          confirmation message, and the devices will be securely connected.
+          You may now enjoy the connected features or functionalities between
+          the devices.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="loader"></div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.querySelector(".loader");
+
+      loader.classList.add("loader--hidden");
+
+      loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+      });
+    });
+  </script>
+</body>
+
+</html>
